@@ -1,12 +1,11 @@
 # This Dockerfile is used to build an image containing basic stuff to be used as a Jenkins slave build node.
-# the file is based on https://github.com/evarga/docker-images/blob/master/jenkins-slave/Dockerfile
-# and the description in https://wiki.jenkins-ci.org/display/JENKINS/Docker+Plugin
+# it has a base from https://github.com/evarga/docker-images/blob/master/jenkins-slave
 
-FROM ubuntu:trusty
-MAINTAINER Larry Cai, larry.caiyu@gmail.com
+FROM ubuntu:latest
+
+MAINTAINER Larry Cai <larry.caiyu@gmail.com>
 
 # Make sure the package repository is up to date.
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update
 
 # Install a basic SSH server
@@ -20,6 +19,11 @@ RUN apt-get install -y --no-install-recommends openjdk-7-jdk
 RUN adduser --quiet jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
+
+# add docker inside
+RUN apt-get install -y curl make
+RUN curl https://get.docker.io/builds/Linux/x86_64/docker-latest -o /usr/local/bin/docker
+RUN chmod +x /usr/local/bin/docker
 
 # Standard SSH port
 EXPOSE 22
