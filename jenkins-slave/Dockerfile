@@ -28,13 +28,14 @@ RUN chmod +x /usr/local/bin/docker
 # Add user docker to the image
 RUN adduser --quiet docker
 RUN echo "docker:docker" | chpasswd
-ENV DOCKER_HOST unix:///docker.sock
 RUN echo "docker ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Standard SSH port
 EXPOSE 22
 
-RUN echo "chmod o+rw /docker.sock " >> /home/docker/.bashrc
-USER docker
+RUN echo "export DOCKER_HOST=unix:///docker.sock" >> /home/docker/.bashrc
+RUN echo "sudo chmod o+rw /docker.sock " >> /home/docker/.bashrc
+
+#USER docker
 
 CMD ["/usr/sbin/sshd", "-D"]
