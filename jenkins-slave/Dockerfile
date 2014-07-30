@@ -21,17 +21,17 @@ RUN useradd -s /bin/bash -m jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
-# TO_DO, it needs to change the docker.sock's permission
-RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+# do we need root permission for jenkins for docker build ?
+# RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Add docker client
 RUN curl https://get.docker.io/builds/Linux/x86_64/docker-latest -o /usr/local/bin/docker
 RUN chmod +x /usr/local/bin/docker
 
-RUN echo "export DOCKER_HOST=unix:///docker.sock" >> /home/jenkins/.bashrc
-RUN echo "sudo chmod o+rw /docker.sock " >> /home/jenkins/.bashrc
+RUN echo "DOCKER_HOST='unix:///docker.sock'" >> /etc/environment
+ADD start.sh /start.sh
 
 # Standard SSH port
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/start.sh"]
