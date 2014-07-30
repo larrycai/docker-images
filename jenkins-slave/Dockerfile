@@ -17,7 +17,7 @@ RUN mkdir -p /var/run/sshd
 RUN apt-get install -qqy --no-install-recommends openjdk-7-jdk
 
 # Add user jenkins to the image
-RUN useradd jenkins
+RUN useradd -m jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
