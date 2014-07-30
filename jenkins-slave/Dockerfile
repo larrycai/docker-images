@@ -6,18 +6,18 @@ FROM ubuntu:14.04
 MAINTAINER Larry Cai <larry.caiyu@gmail.com>
 
 # Make sure the package repository is up to date.
-RUN apt-get update && apt-get install -y openssh-server 
-RUN apt-get install -y git curl make
+RUN apt-get -qq update && apt-get install -qqy openssh-server 
+RUN apt-get install -qqy git curl make
 
 # Install a basic SSH server
 # RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
 RUN mkdir -p /var/run/sshd
 
 # Install JDK 7 (latest edition)
-RUN apt-get install -y --no-install-recommends openjdk-7-jdk
+RUN apt-get install -qqy --no-install-recommends openjdk-7-jdk
 
 # Add user jenkins to the image
-RUN adduser --quiet jenkins
+RUN useradd jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
