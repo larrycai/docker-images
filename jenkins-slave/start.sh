@@ -13,4 +13,4 @@ else
   echo "If yes, better restart docker with -v /var/run/docker.sock:$DOCKER_SOCK"
 fi
 
-/usr/sbin/sshd -d
+/usr/sbin/sshd -D
