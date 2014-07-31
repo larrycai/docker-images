@@ -4,8 +4,8 @@
 # 2. start sshd
 
 DOCKER_SOCK="/docker.sock"
-# Symlink config file.
-if [[ -f "$DOCKER_SOCK" ]]; then
+# check file exists
+if [[ -e "$DOCKER_SOCK" ]]; then
   echo "change permission for $DOCKER_SOCK"
   chmod o+rw $DOCKER_SOCK
 else
