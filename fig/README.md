@@ -1,11 +1,15 @@
-## Usage ##
+# Introduction #
 
-Fig is very useful orchestration tool for docker in single node, while it can't be installed in boot2docker directly.
+[Fig](http://fig.sh) is very useful orchestration tool for docker in single node, while it can't be installed in boot2docker directly.
 
 The docker image helps you to run fig in docker to serve the purpose.
 
 It works in boot2docker 1.3+, and it is verified for Windows Platform.
 
+    docker run -it -v /var/run/docker.sock:/docker.sock larrycai/fig fig -v
+
+## Usage in detail  ##
+    
     docker run -it -v /var/run/docker.sock:/docker.sock -v <local dir>:<path inside> larrycai/fig <fig command>
     
 For example if you put below `fig.yml` under `/home/docker/codingwithme-ansible` (this is my [ansible CodingWithMe training](https://github.com/larrycai/codingwithme-ansible) case)
@@ -27,6 +31,8 @@ For example if you put below `fig.yml` under `/home/docker/codingwithme-ansible`
       image: larrycai/ubuntu-sshd
     database:
       image: larrycai/ubuntu-sshd
+      
+NOTE: the path for the `volume` shall be host path !
       
 Then you can run       
       
