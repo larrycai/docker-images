@@ -4,7 +4,7 @@
 
 The docker image helps you to run fig in docker to serve the purpose.
 
-It works in boot2docker 1.3+, and it is verified for Windows Platform.
+It works in boot2docker 1.3+ for Windows Platform and CoreOS.
 
     docker run -it -v /var/run/docker.sock:/docker.sock larrycai/fig fig -v
 
@@ -33,6 +33,8 @@ For example if you put below `fig.yml` under `/home/docker/codingwithme-ansible`
       image: larrycai/ubuntu-sshd
       
 NOTE: the path for the `volume` shall be host path !
+
+NOTE: if you work for CoreOS, change the `/home/docker` to `/home/core`
       
 Then you can run       
       
