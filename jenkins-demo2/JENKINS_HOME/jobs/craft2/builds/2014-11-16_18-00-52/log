@@ -1,0 +1,28 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /opt/jenkins/data/jobs/craft2/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson2260951984192867268.sh
++ env
+JENKINS_HOME=/opt/jenkins/data
+HOSTNAME=f20b2f3c09eb
+SHLVL=0
+NODE_LABELS=master
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64
+HOME=/root
+JENKINS_SERVER_COOKIE=4ad2d9e093cdb59d
+HUDSON_COOKIE=3be12df4-08c3-44c7-b967-7ec301e79297
+WORKSPACE=/opt/jenkins/data/jobs/craft2/workspace
+NODE_NAME=master
+http_proxy=http://www-proxy.exu.ericsson.se:8080
+EXECUTOR_NUMBER=0
+BUILD_DISPLAY_NAME=#1
+HUDSON_HOME=/opt/jenkins/data
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+JENKINS_MIRROR=http://mirrors.jenkins-ci.org
+BUILD_ID=2014-11-16_18-00-52
+BUILD_TAG=jenkins-craft2-1
+BUILD_NUMBER=1
+HUDSON_SERVER_COOKIE=4ad2d9e093cdb59d
+JOB_NAME=craft2
+PWD=/opt/jenkins/data/jobs/craft2/workspace
+REFRESHED_AT=2014-11-16
+Finished: SUCCESS
