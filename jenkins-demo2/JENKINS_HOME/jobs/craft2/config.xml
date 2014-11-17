@@ -14,8 +14,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pwd
-ls -al</command>
+      <command>
+env</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>

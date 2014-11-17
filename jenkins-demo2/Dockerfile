@@ -1,4 +1,4 @@
-FROM docker.cn/docker/ubuntu:trusty
+FROM ubuntu:trusty
 
 MAINTAINER Larry Cai <larry.caiyu@gmail.com>
 
@@ -8,9 +8,7 @@ ENV REFRESHED_AT 2014-11-16
 #    && echo "deb http://mirrors.sohu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list \
 #    && echo "deb http://mirrors.sohu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list 
 
-ENV http_proxy http://www-proxy.exu.ericsson.se:8080
-
-RUN apt-get update  && apt-get install -y curl openjdk-6-jdk
+RUN apt-get update  && apt-get install -qqy curl openjdk-6-jdk
 
 ENV JENKINS_HOME /opt/jenkins/data
 ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
