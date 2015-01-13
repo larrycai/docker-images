@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jenkins.plugins.logstash.LogstashInstallation_-Descriptor>
+  <installations class="jenkins.plugins.logstash.LogstashInstallation-array"/>
+  <type>REDIS</type>
+  <host>relk</host>
+  <port>6379</port>
+  <username></username>
+  <password></password>
+  <key>logstash</key>
+</jenkins.plugins.logstash.LogstashInstallation_-Descriptor>
