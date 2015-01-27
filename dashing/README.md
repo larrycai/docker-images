@@ -16,9 +16,9 @@ And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
 ### Dashboards
 
-To provide a custom dashboard, use container volume **/dashboards**:
+To provide a custom dashboard, use container volume **/dashing**:
 
-```docker run -v=/my/custom/dashboards:/dashboards -d -p 8080:3030 larrycai/dashing```
+```docker run -v=/my/custom/dashing:/dashing -d -p 8080:3030 larrycai/dashing```
 
 (*Don't forget to also provide the layout.erb*)
 

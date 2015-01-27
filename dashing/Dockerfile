@@ -26,11 +26,13 @@ RUN mkdir /dashing && \
 
 COPY run.sh /
 
+WORKDIR /dashing
+
 VOLUME ["/dashing"]
 
-EXPOSE 3030
+COPY README.md Dockerfile /app/
 
-WORKDIR /dashing
+EXPOSE 3030
 
 CMD ["/run.sh"]
 
