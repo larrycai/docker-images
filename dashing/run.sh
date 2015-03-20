@@ -1,5 +1,5 @@
 #!/bin/bash
 cd /dashing
-bundle install
-exec dashing start
+# bundle install
+dashing start
 
