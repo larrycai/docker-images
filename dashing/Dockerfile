@@ -20,7 +20,7 @@ ENV BUNDLE_APP_CONFIG $GEM_HOME
 
 # Install dashing
 RUN gem install dashing instagram nokogiri twitter eventmachine 
-RUN gem install execjs therubyracer:0.12.0
+RUN gem install execjs libv8
 RUN mkdir /dashing && \
     dashing new dashing && \
     cd /dashing && bundle 
