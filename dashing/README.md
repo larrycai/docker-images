@@ -7,7 +7,7 @@ It contains the base dashing environment and packaged useful gem as well
 
 ## Run
 
-```docker run -d -p 8080:3030 larrycai/dashing```
+```docker run -d -p 3030:3030 larrycai/dashing```
 
 And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
@@ -18,7 +18,7 @@ And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
 To provide a custom dashboard, use container volume **/dashing**:
 
-```docker run -v=/my/custom/dashing:/dashing -d -p 8080:3030 larrycai/dashing```
+```docker run -v $PWD:/dashing -d -p 3030:3030 larrycai/dashing```
 
 (*Don't forget to also provide the layout.erb*)
 

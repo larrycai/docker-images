@@ -1,5 +1,4 @@
-#!/bin/bash
+[2~#!/bin/bash
 cd /dashing
 # bundle install
 dashing start
-

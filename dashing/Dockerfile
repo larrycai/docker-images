@@ -25,8 +25,6 @@ RUN mkdir /dashing && \
     dashing new dashing && \
     cd /dashing && bundle 
 
-COPY run.sh /
-
 WORKDIR /dashing
 
 VOLUME ["/dashing"]
@@ -35,5 +33,5 @@ COPY README.md Dockerfile /app/
 
 EXPOSE 3030
 
-CMD ["/run.sh"]
+CMD ["dashing start"]
 
