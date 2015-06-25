@@ -26,6 +26,7 @@ echo &quot;it will be claimed when manuall check&quot;</command>
       <testDataPublishers/>
       <healthScaleFactor>1.0</healthScaleFactor>
     </hudson.tasks.junit.JUnitResultArchiver>
+	<hudson.plugins.claim.ClaimPublisher plugin="claim@2.7"/>
   </publishers>
   <buildWrappers/>
 </project>
