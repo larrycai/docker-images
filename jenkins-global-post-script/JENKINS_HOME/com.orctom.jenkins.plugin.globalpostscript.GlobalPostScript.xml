@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.orctom.jenkins.plugin.globalpostscript.GlobalPostScript_-DescriptorImpl plugin="global-post-script@1.0.10">
+  <script>claim.groovy</script>
+  <runCondition>
+    <name>FAILURE</name>
+    <ordinal>2</ordinal>
+    <color>RED</color>
+    <completeBuild>true</completeBuild>
+  </runCondition>
+</com.orctom.jenkins.plugin.globalpostscript.GlobalPostScript_-DescriptorImpl>
