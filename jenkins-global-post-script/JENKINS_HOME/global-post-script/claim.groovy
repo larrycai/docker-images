@@ -34,5 +34,5 @@ if (testResultAction != null) {
 println "INFO: here comes the data"
 println data	
 // doesn't work below, but it works under jenkins console
-// def action = build.getAction(hudson.plugins.claim.ClaimBuildAction.class)
-// print action.getReason()
+def action = build.getAction(hudson.plugins.claim.ClaimBuildAction.class)
+print action.getReason()

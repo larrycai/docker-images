@@ -6,11 +6,13 @@ This is the demo on how to use [Global post script jenkins plugin](https://wiki.
 	
 Login as guest/guest and build the `demo` job, then claim it with reason "my fault"
 
-Then try to see whether we can get the failure reason in groovy
+Then try to see whether we can get the failure reason in groovy.
+
+Now it works from 1.0.12 version.
 
 # Code #
 
-Below is the script `claim.groovy` under `$JENKINS_HOME/global-post-script`, you can post it below to http://localhost:8080/script to run it, last two lines are uncommented.
+Below is the script `claim.groovy` under `$JENKINS_HOME/global-post-script`, you can post it below to http://localhost:8080/script to run it.
 
 	import jenkins.*
 	import jenkins.model.*
