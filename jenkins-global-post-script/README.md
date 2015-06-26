@@ -49,9 +49,9 @@ Below is the script `claim.groovy` under `$JENKINS_HOME/global-post-script`, you
 
 	println "INFO: here comes the data"
 	println data	
-	// doesn't work below, but it works under jenkins console
+
 	def action = build.getAction(hudson.plugins.claim.ClaimBuildAction.class)
-	print action.getReason()
+	println action.getReason()
 
 	
 # Development #
