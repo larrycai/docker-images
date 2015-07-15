@@ -25,7 +25,7 @@ RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit tes
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 
 # more needed plugin 
-RUN for plugin in token-macro jquery nodelabelparameter parameterized-trigger;\
+RUN for plugin in token-macro jquery nodelabelparameter parameterized-trigger ws-cleanup;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 
