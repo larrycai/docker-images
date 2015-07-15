@@ -23,7 +23,13 @@ RUN for plugin in git scm-api git-client credentials ;\
 RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit testng-plugin claim;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
-  
+
+# more needed plugin 
+RUN for plugin in nodelabelparameter parameterized-trigger;\
+    do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
+       -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
+
+	   
 ADD JENKINS_HOME $JENKINS_HOME
 
 RUN chmod +x $JENKINS_HOME/start.sh
