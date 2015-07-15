@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.35">
+      <scriptText>def project = &apos;quidryan/aws-sdk-test&apos;
+def branchApi = new URL(&quot;https://api.github.com/repos/${project}/branches&quot;)
+def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
+branches.each {
+    def branchName = it.name
+    job {
+        name &quot;${project}-${branchName}&quot;.replaceAll(&apos;/&apos;,&apos;-&apos;)
+        scm {
+            git(&quot;git://github.com/${project}.git&quot;, branchName)
+        }
+        steps {
+            maven(&quot;test -Dproject.name=${project}/${branchName}&quot;)
+        }
+    }
+}</scriptText>
+      <usingScriptText>true</usingScriptText>
+      <ignoreExisting>false</ignoreExisting>
+      <removedJobAction>IGNORE</removedJobAction>
+      <removedViewAction>IGNORE</removedViewAction>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+      <additionalClasspath></additionalClasspath>
+    </javaposse.jobdsl.plugin.ExecuteDslScripts>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

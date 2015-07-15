@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1.13">
+  <approvedScriptHashes>
+    <string>abdfde33c4c00efcfe433ae20aa8c7db6a0d1d9d</string>
+  </approvedScriptHashes>
+  <approvedSignatures/>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <pendingScripts>
+    <pendingScript>
+      <context/>
+      <script>// failure = scanlogs()
+failure = &quot;TESTCASE&quot;
+
+if(manager.build.result.isCompleteBuild()) {
+//    manager.addShortText(&quot;CI&quot;, &quot;black&quot;, &quot;yellow&quot;, &quot;0px&quot;, &quot;white&quot;)
+//    manager.addShortText(&quot;HW&quot;, &quot;black&quot;, &quot;yellow&quot;, &quot;0px&quot;, &quot;white&quot;)
+//   manager.addShortText(&quot;CASE&quot;, &quot;white&quot;, &quot;red&quot;, &quot;0px&quot;, &quot;white&quot;)
+    manager.addShortText(&quot;CODE &quot;, &quot;white&quot;, &quot;orange&quot;, &quot;0px&quot;, &quot;white&quot;)
+
+    // manager.addShortText(failure)
+} 
+
+// write to summary page
+    summary = manager.createSummary(&quot;error.gif&quot;)
+    summary.appendText(&quot;Detect it is the test case error :&lt;ul&gt;&quot;, false)
+    summary.appendText(&quot;&lt;li&gt;&lt;b&gt;Line 234:&lt;/b&gt; - SNMP alarm is not received&lt;/li&gt;&quot;, false)
+    summary.appendText(&quot;&lt;/ul&gt;&quot;, false)
+
+// write to console log
+manager.listener.logger.println(&quot;Failure Reason: Test Case&quot;);</script>
+      <language>groovy</language>
+    </pendingScript>
+  </pendingScripts>
+  <pendingSignatures>
+    <pendingSignature>
+      <context/>
+      <signature>field org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder$BadgeManager build</signature>
+    </pendingSignature>
+  </pendingSignatures>
+  <pendingClasspathEntries/>
+</scriptApproval>
