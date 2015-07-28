@@ -16,7 +16,7 @@ RUN curl -o /opt/jenkins/jenkins.war -L $JENKINS_MIRROR/war-stable/latest/jenkin
 ENV REFRESHED_AT 2015-06-26
 
 # git environment
-RUN for plugin in git scm-api git-client credentials ;\
+RUN for plugin in git scm-api git-client credentials credentials-binding;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 	   
@@ -28,7 +28,6 @@ RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit tes
 RUN for plugin in token-macro jquery parameterized-trigger postbuild-task description-setter ws-cleanup gerrit-trigger testng-plugin envinject cobertura;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
-
 	   
 ADD JENKINS_HOME $JENKINS_HOME
 
