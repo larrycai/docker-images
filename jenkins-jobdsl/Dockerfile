@@ -16,7 +16,7 @@ RUN curl -o /opt/jenkins/jenkins.war -L $JENKINS_MIRROR/war-stable/latest/jenkin
 ENV REFRESHED_AT 2015-06-26
 
 # git environment
-RUN for plugin in git scm-api git-client credentials credentials-binding;\
+RUN for plugin in git scm-api git-client credentials credentials-binding workflow-step-api plain-credentials;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 	   
