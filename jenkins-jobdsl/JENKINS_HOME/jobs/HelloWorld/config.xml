@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.35">
+      <scriptText>def views = [&quot;Compile&quot;, &quot;Package&quot;, &quot;Release&quot;]
+def giturl = &apos;https://github.com/larrycai/docker-images.git&apos;
+
+views.each { view -&gt;
+
+  (0..9).each  { i -&gt;
+    job(&quot;${view}-DSL-Tutorial-${i}&quot;) {
+        scm {
+            git(giturl)
+        }
+        steps {
+            shell(&apos;echo &quot;this is job${i}&quot;&apos;)
+        }
+    }
+  }
+       
+  listView(view) {
+    jobs {
+      regex(&quot;${view}-.*&quot;)
+    }
+    columns {
+        status()
+        weather()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+    }    
+  }  
+}</scriptText>
+      <usingScriptText>true</usingScriptText>
+      <ignoreExisting>false</ignoreExisting>
+      <removedJobAction>IGNORE</removedJobAction>
+      <removedViewAction>IGNORE</removedViewAction>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+      <additionalClasspath></additionalClasspath>
+    </javaposse.jobdsl.plugin.ExecuteDslScripts>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
