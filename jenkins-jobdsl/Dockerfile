@@ -29,6 +29,9 @@ RUN for plugin in token-macro jquery parameterized-trigger postbuild-task descri
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 	   
+# the credentials needs to be later version to satisfied with other plugins
+RUN touch $JENKINS_HOME/plugins/credentials.jpi.pinned	   
+	   
 ADD JENKINS_HOME $JENKINS_HOME
 
 RUN chmod +x $JENKINS_HOME/start.sh
