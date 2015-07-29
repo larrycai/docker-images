@@ -26,12 +26,13 @@ RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit tes
 
 # more needed plugin 
 RUN for plugin in token-macro jquery parameterized-trigger postbuild-task description-setter \
-				throttle-concurrents ws-cleanup gerrit-trigger testng-plugin envinject cobertura;\
+				throttle-concurrents ws-cleanup gerrit-trigger testng-plugin envinject cobertura \
+				build-flow-plugin buildgraph-view ;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 	   
 # the credentials needs to be later version to satisfied with other plugins
-RUN touch $JENKINS_HOME/plugins/credentials.jpi.pinned	   
+RUN touch $JENKINS_HOME/plugins/credentials.jpi.pinned   
 	   
 ADD JENKINS_HOME $JENKINS_HOME
 
