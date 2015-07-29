@@ -39,12 +39,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>#!/bin/sh
-env
-ls -al
-pwd
-echo &quot;Hello World&quot;
-echo &quot;build success&quot; &gt;&gt; status.txt</command>
+      <command>echo &quot;build success&quot; &gt;&gt; status.txt</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
