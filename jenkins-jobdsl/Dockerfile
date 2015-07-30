@@ -27,7 +27,7 @@ RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit tes
 # more needed plugin 
 RUN for plugin in token-macro jquery parameterized-trigger postbuild-task description-setter \
 				throttle-concurrents ws-cleanup gerrit-trigger testng-plugin envinject cobertura \
-				build-flow-plugin buildgraph-view ;\
+				build-flow-plugin buildgraph-view nested-view ;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
 	   
