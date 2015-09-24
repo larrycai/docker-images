@@ -28,7 +28,8 @@ RUN for plugin in job-dsl config-file-provider groovy-postbuild groovy junit tes
 RUN for plugin in token-macro jquery parameterized-trigger postbuild-task description-setter \
 				throttle-concurrents ws-cleanup gerrit-trigger testng-plugin envinject cobertura \
 				build-flow-plugin buildgraph-view nested-view global-post-script   \
-				ansicolor build-timeout timestamper artifactory \
+				ansicolor build-timeout timestamper artifactory multiple-scms built-on-column \
+				progress-bar-column-plugin mock-slave durable-task \
 				config-file-provider junit email-ext;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
        -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done
