@@ -34,10 +34,10 @@ RUN for plugin in token-macro jquery parameterized-trigger postbuild-task descri
 	   
 # more needed plugin 
 RUN for plugin in progress-bar-column-plugin mock-slave durable-task labeled-test-groups-publisher \
-				locks-and-latches build-user-vars-plugin \
+				locks-and-latches build-user-vars-plugin multiple-scms built-on-column \
 				config-file-provider junit email-ext sonar;\
     do curl -f -o $JENKINS_HOME/plugins/${plugin}.hpi \
-       -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done	   
+       -L $JENKINS_MIRROR/plugins/${plugin}/latest/${plugin}.hpi ; done	    
 	   
 # the credentials needs to be later version to satisfied with other plugins
 RUN touch $JENKINS_HOME/plugins/credentials.jpi.pinned   
