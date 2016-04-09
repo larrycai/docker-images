@@ -8,7 +8,7 @@ ENV REFRESHED_AT 2016-04-09
 #    && echo "deb http://mirrors.sohu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list \
 #    && echo "deb http://mirrors.sohu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
 
-RUN apt-get update  && apt-get install -qqy curl openjdk-6-jdk
+RUN apt-get update  && apt-get install -qqy curl openjdk-7-jdk
 
 ENV JENKINS_HOME /opt/jenkins/data
 ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
