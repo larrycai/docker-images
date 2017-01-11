@@ -9,7 +9,7 @@ It contains the base dashing environment and packaged useful gem as well
 
 ```docker run -d -p 3030:3030 larrycai/dashing```
 
-And point your browser to [http://localhost:8080/](http://localhost:8080/).
+And point your browser to [http://localhost:3030/](http://localhost:3030/).
 
 
 ## Configuration
